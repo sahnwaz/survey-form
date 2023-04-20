@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>Survey Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/i-con" href="nature.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- -------------------------------------------------------------------------------------------------------------- -->
+    <h2 style="text-align:center; font-size:35px;">Survey Form</h2>
+
+
+
+    <form action="backend.php" autocomplete="off" method="post">
+        <fieldset>
+            <legend style="color:rgb(0, 38, 255); background-color:white;"><b>&#128195;</b></legend> <br>
+
+            <!-- text box for Name -->
+            <div class="form-control form-control-2">
+                <label for="name">Full Name </label>
+                <input type="text" name="fullname" id="name" onchange="upperCase()" placeholder="Full Name*" required=""
+                    maxlength="25" />
+            </div>
+
+            <!-- Textarea for Address -->
+            <div class="form-control form-control-2">
+                <label for="address">Full Address </label><br>
+                <textarea name="fulladdress" id="address" placeholder="Write Your Full Address*" maxlength="200"
+                    cols="40" rows="4"></textarea/>
+        </div>
+    
+        <!-- text box for Nationality, Value is already given because only Indians can fill this form and this is read only. -->
+        <div class="form-control form-control-2">
+            <label for="nationality">Nationality <small>"only for India"</small></label>
+            <input type="text" name="nationality" id="nationality" value="Indian" readonly=""/>
+        </div> 
+
+        <!-- Telephone Number -->
+        <div class="form-control form-control-2">
+            <label for="phone">Mobile Number </label>
+            <input type="tel" id="phone" name="phone" placeholder="10 Digit*" pattern="[0-9]{10}" required>          
+        </div> 
+
+        <!-- Email ID -->
+        <div class="form-control form-control-2">
+            <label for="email">Email </label>            
+            <input type="email" name="Emailid" onchange="upperCase()" id="email" placeholder="Email ID*"/>
+        </div>
+
+        <!-- Number type for age -->
+        <div class="form-control form-control-2">
+            <label for="age">Age Between 20-30 </label>
+            <input type="number" name="age" id="age" max="30" min="20"/>
+        </div>        
+
+        <!-- datetime-local type for Birth date and time -->
+        <div>
+            <label for="birthdatetime">Birth Date and Time</label>
+            <input type="datetime-local" id="birthdatetime" name="birthdatetime"/>
+        </div>
+
+        <!-- Date for Today's date -->
+        <div>
+            <label for="today">Today's Date </label>
+            <input type="date" name="today" id="today"/>
+        </div>
+
+        <!-- time for Current time -->
+        <div>
+            <label for="time">Current Time </label>
+            <input type="time" name="time" id="time"/>
+        </div>
+
+        <!-- Radio for Gender -->
+        <div>
+         <label>Gender :</label>
+         <input type="radio" id="male" name="gender" value="Male" checked="">
+         <label for="male">Male</label>
+         <input type="radio" id="female" name="gender" value="Female">
+         <label for="female">Female</label>
+         <input type="radio" id="other" name="gender" value="Others">
+         <label for="other">Others</label>
+        </div>  
+
+        <!-- Checkbox for Food you like -->
+        <div>
+            <label>Food You Like :</label>
+            <input type="checkbox" id="food1" name="food[]" value="Veg.">
+            <label for="food1">Veg. |</label>
+            <input type="checkbox" id="food2" name="food[]" value="Non-Veg.">
+            <label for="food2"> Non-Veg. |</label>
+            <input type="checkbox" id="food3" name="food[]" value="Both Liked" checked>
+            <label for="food3">Both Liked</label>
+        </div>   
+   
+        <div>
+            <label for="mycar">Favourite Car Company</label>
+            <select name="myCar" id="mycar">
+                <option>Select</option>
+                <option value="Tata Motor">Tata Motor</option>
+                <option value="Maruti">Maruti</option>
+                <option value="Mahindra">Mahindra</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Favorite Tourist Place</label>
+            <select>
+                <optgroup label="ASIA">
+                    <option>Select Country</option>
+                    <option value="Kerala">Kerala - India</option>
+                    <option value="Mumbai">Mumbai - India</option>
+                    <option value="Thailand">Phuket - Thailand</option>
+                    <option value="Beijing">Beijing – China</option>
+                    <option value="Vietnam">Hoi An, Vietnam</option>
+                </optgroup>
+                <optgroup label="AFRICA">
+                    <option>Select Country</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="Egypt">Egypt </option>
+                    <option value="Kenya">Kenya</option>
+                </optgroup>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <!-- datalist for Favourite Browsers -->
+
+        <!-- color type for favorite color -->
+        <div>
+            <label for="favcolor">Select your favorite color:</label>
+            <input type="color" id="favcolor" name="favcolor" value="#0099f5"/><br><br>
+        </div>
+
+<!-- ------------Image Upload---------------------------------------------------------------------------------------------------- -->
+    <div class="cls-img-1" id="ShowHide"> 
+    <div class="cls-img-2"> 
+    <img id="img-file-here">
+    <label for="file-ip-1">Upload Image</label>
+    <input type="file" id="file-ip-1" accept="image/*" onchange="fun(event);">
+    </div>
+    </div>
+
+<script>
+
+    function fun(event) {
+        if (event.target.files.length > 0) {
+            let lnk = URL.createObjectURL(event.target.files[0]);
+            let preview = document.getElementById("img-file-here");
+            preview.src = lnk;
+            preview.style.display = "block";
+        }
+    }
+</script>
+
+    <!-- Reset and Submit type button-->
+    <div>
+        <input type="reset" value="Reset Form"/> 
+        <input type="submit" formaction="45 HTML Forms.html" formtarget="_blank" value="Submit Form">
+    </div>
+    </fieldset>
+    </form>
+
+
+</body>  
+</html>

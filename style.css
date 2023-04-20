@@ -1,0 +1,114 @@
+body {            
+  background-image: url("nature.jpg");
+  background-size: cover;
+  font-family: Verdana;}
+  
+/* Styling All div of page */
+div{margin-bottom: 20px;}
+
+/* Styling the Form (Color, Padding, Shadow) */
+form {
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: 5px 20%;
+  padding: 30px 20px;
+  background-color: #fff;
+  opacity: 0.7;
+  box-shadow: 2px 20px 20px black;}
+
+/* Styling all lebels */
+label{font-weight: bold; color: black; margin-right: 10px;}
+
+/* Styling form-control Class */
+.form-control {text-align: left;}
+
+/* Styling form-control input, select, */
+.form-control input, select, textarea {
+  border: 1px solid #777;
+  border-radius: 5px;
+  font-family: inherit;}
+
+/* creating multiple class to learn apply multiple class */
+.form-control-2 input, select, textarea {
+  padding: 5px;
+  font-size:inherit;
+  width: 45%;
+  display: block;}            
+
+/* When click on text or Focus on form input elements it get focus color.*/
+.form-control :focus {background-color: rgb(165, 237, 179);}
+
+/*You Can create Class for focus and can add to related div, it also work*/
+input[type="datetime-local"]:focus {background-color: rgb(165, 237, 179);}
+input[type="date"]:focus {background-color: rgb(165, 237, 179);}
+input[type="time"]:focus {background-color: rgb(165, 237, 179);}        
+.cls-focus :focus {background-color: rgb(165, 237, 179);}
+
+input[type="datetime-local"], 
+input[type="date"], 
+input[type="time"]{
+border: 1px solid #777;
+border-radius: 5px;
+font-family: inherit;
+padding: 5px;
+font-size:inherit;
+width: 45%;
+display: block;}
+
+/* Styling Radio and checkbox button */
+input[type="radio"], input[type="checkbox"] {width: 18px; height: 18px;}
+
+/* Styling the button inputs Reset and Submit */
+input[type="reset"], input[type="submit"]{
+background-color: seagreen;
+border-radius: 3px;
+font-family: inherit;
+font-size: inherit;
+font-weight: bold;
+color: white;
+padding: 5px;
+margin: 5px 10px;
+}
+
+input[type="reset"] {margin-left: 33%;}
+
+/* Styling hover effect on button inputs Reset and Submit */        
+input[type="reset"]:hover{color: seagreen; background-color: white; border: 1px solid seagreen;}
+input[type="submit"]:hover{color: seagreen; background-color: white; border: 1px solid seagreen;}
+
+/* -------------------------------------------------------------------------------------------------------- */
+
+.cls-img-1 {
+height:100%;
+display:flex;
+align-items:center;
+justify-content:left;}
+
+.cls-img-2 
+{width:200px;
+padding:5px;
+border-radius: 10px;
+box-shadow: -1px -1px 10px rgba(255, 255, 255, 0.377), 3px 3px 7px rgba(33, 33, 34, 0.377);}
+
+.cls-img-2 img {
+width:100%;
+display:none;
+border-radius: 5px;
+margin-bottom:5px;
+}
+
+.cls-img-2 input {display:none; }
+
+.cls-img-2 label {
+display:block;
+margin: 5px auto;
+line-height:30px;
+text-align:center;
+background:#1172c2;
+color:#fff;
+font-size:15px;
+font-family:"Open Sans",sans-serif;
+text-transform:Uppercase;
+font-weight:bold;
+border-radius:5px;
+cursor:pointer;}
